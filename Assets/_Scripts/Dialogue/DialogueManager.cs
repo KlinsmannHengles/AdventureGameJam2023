@@ -17,8 +17,10 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
 
+    [Header("Story")]
     private Story currentStory;
 
+    //[Header("Managing")]
     public bool dialogueIsPlaying { get; private set; }
 
     private void Awake()
@@ -58,7 +60,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         // handle continuing to the next line in the dialogue when submit is pressed
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("e") /*|| Input.GetMouseButtonDown(0)*/)
         {
             ContinueStory();
         }

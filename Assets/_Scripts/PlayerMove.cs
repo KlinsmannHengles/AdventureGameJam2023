@@ -13,6 +13,12 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // The player don't move if the dialogue is playing
+        if (DialogueManager.Instance.dialogueIsPlaying)
+        {
+            return;
+        }
+
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
