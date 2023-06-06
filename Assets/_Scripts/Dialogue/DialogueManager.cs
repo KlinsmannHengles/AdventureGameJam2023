@@ -74,11 +74,12 @@ public class DialogueManager : Singleton<DialogueManager>
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
-        ContinueStory();
+        //ContinueStory();
     }
 
     private IEnumerator ExitDialogueMode()
     {
+        Debug.Log("Saí do diálogo");
         yield return new WaitForSeconds(0.1f);
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);

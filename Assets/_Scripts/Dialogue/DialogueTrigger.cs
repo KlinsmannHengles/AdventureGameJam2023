@@ -39,7 +39,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             Debug.Log("Inside condition");
             playerInRange = true;
-            cueSpline.transform.position = this.gameObject.transform.position + new Vector3(0f, 1f, 0f);
+            cueSpline.transform.position = this.gameObject.transform.position + new Vector3(0f, 1.9f, 0f);
             visualCue.SetActive(true);
             AnimateVisualCue();
         }
@@ -58,6 +58,11 @@ public class DialogueTrigger : MonoBehaviour
     {
         // Go up and go down animation
         Tween.Spline(cueSpline, visualCue.transform, 0, 1f, false, 1, 0, Tween.EaseInOut, Tween.LoopType.PingPong);
+    }
+
+    private void FadeOutVisualCue()
+    {
+        
     }
 
 }
