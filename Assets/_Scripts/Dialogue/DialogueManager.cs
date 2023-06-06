@@ -4,10 +4,11 @@ using UnityEngine;
 using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
+using Pixelplacement;
 
-public class DialogueManager : MonoBehaviour
+public class DialogueManager : Singleton<DialogueManager>
 {
-    public static DialogueManager Instance { get; private set; }
+    //public static DialogueManager Instance { get; private set; }
 
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
@@ -23,7 +24,7 @@ public class DialogueManager : MonoBehaviour
     //[Header("Managing")]
     public bool dialogueIsPlaying { get; private set; }
 
-    private void Awake()
+    /*private void Awake()
     {
         // If there is an instance, and it's not me, delete myself
         if (Instance != null && Instance != this)
@@ -34,7 +35,7 @@ public class DialogueManager : MonoBehaviour
         {
             Instance = this;
         }
-    }
+    }*/
 
     private void Start()
     {

@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pixelplacement;
 
 public class DialogueTrigger : MonoBehaviour
 {
 
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
+    [SerializeField] private Spline cueSpline;
 
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
@@ -32,11 +34,14 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Collision: " + collision);
         if (collision.gameObject.tag == "Player")
         {
+            Debug.Log("Inside condition");
             playerInRange = true;
-            visualCue.transform.position = this.gameObject.transform.position + new Vector3(0f, 1f, 0f);
+            cueSpline.transform.position = this.gameObject.transform.position + new Vector3(0f, 1f, 0f);
             visualCue.SetActive(true);
+            AnimateVisualCue();
         }
     }
 
@@ -47,6 +52,12 @@ public class DialogueTrigger : MonoBehaviour
             playerInRange = false;
             visualCue.SetActive(false);
         }
+    }
+
+    private void AnimateVisualCue()
+    {
+        // Go up and go down animation
+        Tween.Spline(cueSpline, visualCue.transform, 0, 1f, false, 1, 0, Tween.EaseInOut, Tween.LoopType.PingPong);
     }
 
 }

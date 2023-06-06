@@ -18,6 +18,7 @@ public class PlayerMove : MonoBehaviour
         // The player don't move if the dialogue is playing
         if (DialogueManager.Instance.dialogueIsPlaying)
         {
+            animator.SetFloat("Speed", 0f);
             return;
         }
 
@@ -28,10 +29,11 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         // The player don't move if the dialogue is playing
-        /*if (DialogueManager.Instance.dialogueIsPlaying)
+        if (DialogueManager.Instance.dialogueIsPlaying)
         {
+            animator.SetFloat("Speed", 0f);
             return;
-        }*/
+        }
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -47,9 +49,7 @@ public class PlayerMove : MonoBehaviour
         {
             transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
             flip.SetTrigger("Flip");
-        }
-
-        else if(transform.localScale.x==-1 && movement.x<0)
+        } else if(transform.localScale.x==-1 && movement.x<0)
         {
             transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
             flip.SetTrigger("Flip");
