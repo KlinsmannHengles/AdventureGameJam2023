@@ -60,9 +60,4 @@ public class DialogueTrigger : MonoBehaviour
         Tween.Spline(cueSpline, visualCue.transform, 0, 1f, false, 1, 0, Tween.EaseInOut, Tween.LoopType.PingPong);
     }
 
-    private void FadeOutVisualCue()
-    {
-        
-    }
-
 }

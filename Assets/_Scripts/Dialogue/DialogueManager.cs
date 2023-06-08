@@ -24,21 +24,20 @@ public class DialogueManager : Singleton<DialogueManager>
     //[Header("Managing")]
     public bool dialogueIsPlaying { get; private set; }
 
-    /*private void Awake()
+    [Header("Variables")]
+    private DialogueVariables dialogueVariables;
+
+    [Header("Load Globals JSON")]
+    [SerializeField] private TextAsset loadGlobalsJSON;
+
+    public void Awake()
     {
-        // If there is an instance, and it's not me, delete myself
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-        }
-    }*/
+        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
+    }
 
     private void Start()
     {
+
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
 
@@ -74,13 +73,20 @@ public class DialogueManager : Singleton<DialogueManager>
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
+        dialogueVariables.StartListening(currentStory);
+
+        //currentStory.variablesState["actualDialogue"] = 2;
         //ContinueStory();
     }
 
     private IEnumerator ExitDialogueMode()
     {
         Debug.Log("Saí do diálogo");
+
         yield return new WaitForSeconds(0.1f);
+
+        dialogueVariables.StopListening(currentStory);
+
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
