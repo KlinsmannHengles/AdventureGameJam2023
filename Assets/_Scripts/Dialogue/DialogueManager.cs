@@ -30,6 +30,9 @@ public class DialogueManager : Singleton<DialogueManager>
     [Header("Load Globals JSON")]
     [SerializeField] private TextAsset loadGlobalsJSON;
 
+    /*[Header("Tween")]
+    public AnimationCurve curve; // for tweens*/
+
     public void Awake()
     {
         dialogueVariables = new DialogueVariables(loadGlobalsJSON);
@@ -71,7 +74,10 @@ public class DialogueManager : Singleton<DialogueManager>
     {
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
+
+        // Show Dialogue Panel
         dialoguePanel.SetActive(true);
+        Tween.CanvasGroupAlpha(dialoguePanel.GetComponent<CanvasGroup>(), 1, 0.5f, 0, Tween.EaseOut);
 
         dialogueVariables.StartListening(currentStory);
 
@@ -88,7 +94,12 @@ public class DialogueManager : Singleton<DialogueManager>
         dialogueVariables.StopListening(currentStory);
 
         dialogueIsPlaying = false;
-        dialoguePanel.SetActive(false);
+
+        // Hide dialogue panel
+        Tween.CanvasGroupAlpha(dialoguePanel.GetComponent<CanvasGroup>(), 0, 0.5f, 0, Tween.EaseIn, 
+            Tween.LoopType.None, null, () => dialoguePanel.SetActive(false));
+        
+
         dialogueText.text = "";
     }
 
