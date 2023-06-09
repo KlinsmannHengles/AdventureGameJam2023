@@ -26,7 +26,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 46000
+  Length: 64493
 --- !u!114 &-8557042277487309693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 11250
---- !u!114 &-7453486191164467862
+--- !u!114 &-5571664549701441220
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,9 +64,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambiente/Walking_Loop
+  m_Name: event:/Ambiente/walking_Loop
   m_EditorClassIdentifier: 
-  Path: event:/Ambiente/Walking_Loop
+  Path: event:/Ambiente/walking_Loop
   Guid:
     Data1: 1377951983
     Data2: 1188740121
@@ -101,13 +101,13 @@ MonoBehaviour:
     Data4: -840522591
   Banks:
   - {fileID: 1511363483763016361}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 11250
+  Length: 4800
 --- !u!114 &-3477538990732576023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +135,54 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7500
+--- !u!114 &-3461626495356561924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wind blowing mike v1/Parameter 2
+  m_EditorClassIdentifier: 
+  Name: Parameter 2
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2292188656
+    data2: 177104734
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-3367692512299988862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Parameter 2
+  m_EditorClassIdentifier: 
+  Name: Parameter 2
+  StudioPath: parameter:/Parameter 2
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2292188656
+    data2: 177104734
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-787218058579704190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,14 +234,16 @@ MonoBehaviour:
   - {fileID: 3569361481202591422}
   - {fileID: 1317283071983924334}
   - {fileID: -3477538990732576023}
-  - {fileID: -7453486191164467862}
   - {fileID: 4812735262755819347}
-  EditorParameters: []
+  - {fileID: 4348741625374699057}
+  - {fileID: -5571664549701441220}
+  EditorParameters:
+  - {fileID: -3367692512299988862}
   MasterBanks:
   - {fileID: 1511363483763016361}
   StringsBanks:
   - {fileID: 5408202981238009398}
-  cacheTime: 638218617989319143
+  cacheTime: 638218726759773939
   cacheVersion: 131603
 --- !u!114 &1317283071983924334
 MonoBehaviour:
@@ -237,7 +287,7 @@ MonoBehaviour:
   Path: Assets/FMODBank/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638218617989289148
+  lastModified: 638218726759743959
   FileSizes: []
   Exists: 1
 --- !u!114 &3569361481202591422
@@ -267,6 +317,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 265
+--- !u!114 &4348741625374699057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambiente/wind blowing mike v1
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiente/wind blowing mike v1
+  Guid:
+    Data1: -450838387
+    Data2: 1083050969
+    Data3: -1147588700
+    Data4: 758952860
+  Banks:
+  - {fileID: 1511363483763016361}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -3461626495356561924}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 38000
 --- !u!114 &4812735262755819347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,10 +387,10 @@ MonoBehaviour:
   Path: Assets/FMODBank/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638218617989319143
+  lastModified: 638218726759773939
   FileSizes:
   - Name: 
-    Value: 1322
+    Value: 1438
   Exists: 1
 --- !u!114 &7641965079124670514
 MonoBehaviour:
