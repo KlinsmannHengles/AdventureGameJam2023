@@ -6262,7 +6262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3634061395127307493, guid: 92d36fe2ed95ab14fad19dbb96fd956f, type: 3}
       propertyPath: parallaxEffect_y
-      value: 0
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 3634061395344380505, guid: 92d36fe2ed95ab14fad19dbb96fd956f, type: 3}
       propertyPath: m_LocalPosition.x
