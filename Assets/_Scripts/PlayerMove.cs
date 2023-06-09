@@ -58,9 +58,8 @@ public class PlayerMove : MonoBehaviour
         }
 
         var emission = dust.emission;
-        if (movement.x != 0 || movement.y != 0) {
-            dust.Play();
-            emission.enabled = true;}
+        if (movement.x != 0 || movement.y != 0)
+            emission.enabled = true;
         else {
             emission.enabled = false;
         }
