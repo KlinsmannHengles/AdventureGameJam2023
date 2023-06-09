@@ -20,6 +20,19 @@ public class GameManager : MonoBehaviour
         
     }
 
+    private void ChangeToDay(DAY day)
+    {
+        switch (day)
+        {
+            case DAY.ONE:
+                break;
+            case DAY.TWO:
+                break;
+            case DAY.THREE:
+                break;
+        }
+    }
+
 
 
 }

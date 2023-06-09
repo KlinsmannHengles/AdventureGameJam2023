@@ -10,6 +10,8 @@ INCLUDE globals.ink
 }
 
 === NPC04_dialogue_01 ===
+You are trying to create a Super Computer?
+Amazing!
 -> END
 
 === NPC04_dialogue_02 ===
