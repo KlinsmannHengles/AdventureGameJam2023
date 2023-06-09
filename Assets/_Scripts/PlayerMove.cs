@@ -13,6 +13,8 @@ public class PlayerMove : MonoBehaviour
 
     public Animator flip;
 
+    [SerializeField] private ParticleSystem dust;
+
     private void FixedUpdate()
     {
         // The player don't move if the dialogue is playing
@@ -54,5 +56,14 @@ public class PlayerMove : MonoBehaviour
             transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
             flip.SetTrigger("Flip");
         }
+
+        var emission = dust.emission;
+        if (movement.x != 0 || movement.y != 0) {
+            dust.Play();
+            emission.enabled = true;}
+        else {
+            emission.enabled = false;
+        }
     }
+
 }
